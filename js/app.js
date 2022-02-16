@@ -21,7 +21,7 @@ function expensesFunction() {
 // calculating income and expenses
 document.getElementById("calc-btn").addEventListener("click", function () {
   expensesFunction();
-  // expenses
+  // income
   const incomeInput = document.getElementById("income-input");
   const income = parseFloat(incomeInput.value);
 
@@ -29,4 +29,29 @@ document.getElementById("calc-btn").addEventListener("click", function () {
   const balance = income - expensesFunction();
   const balanceText = document.getElementById("balance");
   balanceText.innerText = balance;
+});
+
+// amount save listener
+document.getElementById("save-btn").addEventListener("click", function () {
+  // income
+  const incomeInput = document.getElementById("income-input");
+  const income = parseFloat(incomeInput.value);
+
+  // save amount
+  const saveInput = document.getElementById("save-input");
+  const save = parseFloat(saveInput.value);
+
+  const saveAmount = (income * save) / 100;
+  const savingText = document.getElementById("save-amount");
+  savingText.innerText = saveAmount;
+  const saving = parseInt(savingText.innerText);
+
+  // remaining-balance
+  const balance = document.getElementById("balance");
+  const balanceAmount = parseFloat(balance.innerText);
+
+  const remainingAmount = balanceAmount - saving;
+
+  const remaining = document.getElementById("remaining-balance");
+  remaining.innerText = remainingAmount;
 });

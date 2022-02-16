@@ -102,24 +102,28 @@
                       type="number"
                       class="form-control text-center"
                       id="save-input"
-                      value="20"
                     />
                   </div>
                   <!-- save btn part -->
                   <div class="mb-3 d-flex gap-3 align-items-center">
                     <span class="lead mb-0 fw-normal">%</span>
-                    <button class="btn btn-info px-5 text-white fw-normal">
+                    <button
+                      id="save-btn"
+                      class="btn btn-info px-5 text-white fw-normal"
+                    >
                       Save
                     </button>
                   </div>
                 </div>
                 <!-- save amount -->
                 <div class="mb-3 text-center">
-                  <h5>Saving Amount: <span>2000</span></h5>
+                  <h5>Saving Amount: <span id="save-amount"></span></h5>
                 </div>
                 <!--Remaining Balance -->
                 <div class="mb-3 text-center">
-                  <h5>Remaining Balance: <span>2500</span></h5>
+                  <h5>
+                    Remaining Balance: <span id="remaining-balance"></span>
+                  </h5>
                 </div>
               </div>
             </div>
