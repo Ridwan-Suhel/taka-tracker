@@ -1,0 +1,18 @@
+.expenses-area label,
+.income-area label {
+  width: 90px;
+}
+.save-area input {
+  width: 80px;
+}
+@media (max-width: 370px) {
+  .tracker-wrapper {
+    margin-top: 30px;
+  }
+  .gap-3 {
+    gap: 5px !important;
+  }
+  .d-flex {
+    flex-wrap: wrap;
+  }
+}

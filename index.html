@@ -14,11 +14,138 @@
     <title>Taka Tracker.</title>
   </head>
   <body>
+    <!-- header start  -->
+    <header class="py-5">
+      <h1 class="text-center text-info">Taka Tracker</h1>
+    </header>
     <main>
       <div class="container">
-        <h1>Hello</h1>
+        <div class="row">
+          <!-- hero image area  -->
+          <div class="col-md-7">
+            <img
+              src="img/taka-tracker.jpg"
+              alt="image"
+              class="img-fluid rounded"
+            />
+          </div>
+          <!-- taka tracker area  -->
+          <div class="col-md-5">
+            <div class="tracker-wrapper bg-light py-4 px-3 rounded-3">
+              <!-- income area -->
+              <div class="income-area">
+                <h3 class="text-center mb-4">Income</h3>
+                <div class="mb-3 d-flex gap-3 align-items-center">
+                  <label for="income" class="form-label lead mb-0 fw-normal"
+                    >Income:</label
+                  >
+                  <input
+                    type="number"
+                    class="form-control"
+                    id=""
+                    value="10000"
+                  />
+                </div>
+              </div>
+              <!-- Expenses area -->
+              <div class="expenses-area">
+                <h4 class="text-center mb-4">Expenses</h4>
+                <!-- food input -->
+                <div class="mb-3 d-flex gap-3 align-items-center">
+                  <label for="income" class="form-label lead mb-0 fw-normal"
+                    >Food:</label
+                  >
+                  <input
+                    type="number"
+                    class="form-control"
+                    id=""
+                    value="10000"
+                  />
+                </div>
+                <!-- rent input -->
+                <div class="mb-3 d-flex gap-3 align-items-center">
+                  <label for="income" class="form-label lead mb-0 fw-normal"
+                    >Rent:</label
+                  >
+                  <input
+                    type="number"
+                    class="form-control"
+                    id=""
+                    value="10000"
+                  />
+                </div>
+                <!-- clothes input -->
+                <div class="mb-3 d-flex gap-3 align-items-center">
+                  <label for="income" class="form-label lead mb-0 fw-normal"
+                    >Clothes:</label
+                  >
+                  <input
+                    type="number"
+                    class="form-control"
+                    id=""
+                    value="10000"
+                  />
+                </div>
+              </div>
+              <!-- calculate btn -->
+              <div class="mb-3 text-center">
+                <button class="btn btn-info text-white px-5 fs-5">
+                  Calculate
+                </button>
+              </div>
+              <!-- Total Expenses -->
+              <div class="mb-3 text-center">
+                <h5>Total Expenses: <span>5500</span></h5>
+              </div>
+              <!-- Balance -->
+              <div class="mb-3 text-center">
+                <h5>Balance: <span>4500</span></h5>
+              </div>
+
+              <!-- save area  -->
+              <div class="save-area">
+                <!-- save box wrapper  -->
+                <div
+                  class="save-wrapper d-flex align-items-center justify-content-center gap-3"
+                >
+                  <div class="mb-3 d-flex gap-3 align-items-center">
+                    <label for="income" class="form-label lead mb-0 fw-normal"
+                      >Save:</label
+                    >
+                    <input
+                      type="number"
+                      class="form-control text-center"
+                      id=""
+                      value="20"
+                    />
+                  </div>
+                  <!-- save btn part -->
+                  <div class="mb-3 d-flex gap-3 align-items-center">
+                    <span class="lead mb-0 fw-normal">%</span>
+                    <button class="btn btn-info px-5 text-white fw-normal">
+                      Save
+                    </button>
+                  </div>
+                </div>
+                <!-- save amount -->
+                <div class="mb-3 text-center">
+                  <h5>Saving Amount: <span>2000</span></h5>
+                </div>
+                <!--Remaining Balance -->
+                <div class="mb-3 text-center">
+                  <h5>Remaining Balance: <span>2500</span></h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
+
+    <!-- <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1">
+      </div> -->
 
     <script src="js/app.js"></script>
   </body>
