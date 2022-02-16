@@ -5,6 +5,12 @@
 .save-area input {
   width: 80px;
 }
+#oops-msg {
+  display: none;
+}
+#nothingShow {
+  display: none;
+}
 @media (max-width: 370px) {
   .tracker-wrapper {
     margin-top: 30px;

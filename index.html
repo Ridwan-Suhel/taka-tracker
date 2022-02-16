@@ -43,6 +43,7 @@
                   >
                   <input type="number" class="form-control" id="income-input" />
                 </div>
+                <p class="d-block" id="income-alert"></p>
               </div>
               <!-- Expenses area -->
               <div class="expenses-area">
@@ -54,7 +55,6 @@
                   >
                   <input type="number" class="form-control" id="food-input" />
                 </div>
-                <p class="d-block" id="food-alert"></p>
 
                 <!-- rent input -->
                 <div class="mt-3 d-flex gap-3 align-items-center">
@@ -63,7 +63,6 @@
                   >
                   <input type="number" class="form-control" id="rent-input" />
                 </div>
-                <p class="d-block" id="rent-alert"></p>
 
                 <!-- clothes input -->
                 <div class="mt-3 d-flex gap-3 align-items-center">
@@ -74,7 +73,7 @@
                   >
                   <input type="number" class="form-control" id="cloth-input" />
                 </div>
-                <p class="d-block" id="cloth-alert"></p>
+                <p class="d-block" id="expense-alert"></p>
               </div>
               <!-- calculate btn -->
               <div class="mt-3 text-center">
@@ -88,7 +87,11 @@
               </div>
               <!-- Balance -->
               <div class="mt-3 text-center">
-                <h5>Balance: <span id="balance"></span></h5>
+                <h5>
+                  Balance: <span id="balance"></span
+                  ><span id="oops-msg">Oops! something wrong...</span>
+                  <span id="nothingShow">Empty Balance.</span>
+                </h5>
               </div>
 
               <!-- save area  -->
@@ -136,12 +139,6 @@
         </div>
       </div>
     </main>
-
-    <!-- <div class="mt-3">
-        <label for="exampleInputPassword1" class="form-label">Password</label>
-        <input type="password" class="form-control" id="exampleInputPassword1">
-      </div> -->
-
     <script src="js/app.js"></script>
   </body>
 </html>

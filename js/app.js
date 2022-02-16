@@ -1,4 +1,6 @@
 function expensesFunction() {
+  // income input
+  const incomeInput = document.getElementById("income-input");
   // expenses
   const foodInput = document.getElementById("food-input");
   const foodExpenses = parseFloat(foodInput.value);
@@ -15,22 +17,58 @@ function expensesFunction() {
   expensesText.innerText = expenses;
   const totalExpenses = parseFloat(expensesText.innerText);
 
-  if (foodInput.value < 0) {
-    document.getElementById("food-alert").innerText =
-      "Please Use a positive amount of food Expense";
-    document.getElementById("food-alert").style.color = "tomato";
-  } else if (rentInput.value < 0) {
-    document.getElementById("rent-alert").innerText =
-      "Please Use a positive amount of rent Expense";
-    document.getElementById("rent-alert").style.color = "tomato";
-  } else if (clothInput.value < 0) {
-    document.getElementById("cloth-alert").innerText =
-      "Please Use a positive amount of clothes Expense";
-    document.getElementById("cloth-alert").style.color = "tomato";
+  if (foodInput.value < 0 || rentInput.value < 0 || clothInput.value < 0) {
+    // expenses input alert
+    document.getElementById("expense-alert").innerText =
+      "Please Use positive amount of Expense";
+    document.getElementById("expense-alert").style.color = "tomato";
+
+    // expense amount err msg
+    document.getElementById("total-expenses").innerText =
+      "Oops! Something Wrong.";
+    document.getElementById("total-expenses").style.color = "tomato";
+
+    // balance amount err msg
+    document.getElementById("oops-msg").style.display = "inline-block";
+    document.getElementById("oops-msg").style.color = "tomato";
+    document.getElementById("balance").style.display = "none";
+  } else if (
+    foodInput.value == "" ||
+    rentInput.value == "" ||
+    clothInput.value == ""
+  ) {
+    // expenses input alert
+    document.getElementById("expense-alert").innerText =
+      "Please fill up the input by valid number";
+    document.getElementById("expense-alert").style.color = "tomato";
+
+    // expense amount err msg
+    document.getElementById("total-expenses").innerText =
+      "Oops! Something Wrong.";
+    document.getElementById("total-expenses").style.color = "tomato";
+
+    // balance amount err msg
+    document.getElementById("oops-msg").style.display = "inline-block";
+    document.getElementById("oops-msg").style.color = "tomato";
+    document.getElementById("balance").style.display = "none";
+  } else if (totalExpenses > incomeInput.value) {
+    document.getElementById("total-expenses").innerText =
+      expenses + " - Expense is Higher!";
+    document.getElementById("total-expenses").style.color = "tomato";
+    // balance amount err msg
+    document.getElementById("nothingShow").style.display = "inline-block";
+    document.getElementById("nothingShow").style.color = "tomato";
+    document.getElementById("balance").style.display = "none";
   } else {
-    document.getElementById("food-alert").innerText = "";
-    document.getElementById("rent-alert").innerText = "";
-    document.getElementById("cloth-alert").innerText = "";
+    // expense alert msg
+    document.getElementById("expense-alert").innerText = "";
+    document.getElementById("total-expenses").style.color = "#333";
+
+    //balance alert msg
+    // balance amount err msg
+    document.getElementById("oops-msg").style.display = "none";
+    document.getElementById("balance").style.display = "inline-block";
+    document.getElementById("nothingShow").style.display = "none";
 
     return totalExpenses;
   }
@@ -47,7 +85,32 @@ function updatingBalance() {
   balanceText.innerText = balance;
 
   const balanceAmount = parseFloat(balanceText.innerText);
-  return balanceAmount;
+
+  if (incomeInput.value < 0) {
+    // income input alert
+    document.getElementById("income-alert").innerText =
+      "Please Use positive amount of Income number";
+    document.getElementById("income-alert").style.color = "tomato";
+
+    // balance amount err msg
+    document.getElementById("balance").innerText = "Oops! Something Wrong.";
+    document.getElementById("balance").style.color = "tomato";
+  } else if (incomeInput.value == "") {
+    // income input alert
+    document.getElementById("income-alert").innerText =
+      "Please fill up the input by valid number";
+    document.getElementById("income-alert").style.color = "tomato";
+
+    // balance amount err msg
+    document.getElementById("balance").innerText = "Oops! Something Wrong.";
+    document.getElementById("balance").style.color = "tomato";
+
+    document.getElementById("nothingShow").style.display = "none";
+  } else {
+    document.getElementById("income-alert").innerText = "";
+    document.getElementById("balance").style.color = "#333";
+    return balanceAmount;
+  }
 }
 
 // calculate income and expenses event
