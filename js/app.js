@@ -9,7 +9,7 @@ function expensesFunction() {
   const clothInput = document.getElementById("cloth-input");
   const clothExpenses = parseFloat(clothInput.value);
 
-  // total expenses
+  // total expenses amount
   const expenses = foodExpenses + rentExpenses + clothExpenses;
   const expensesText = document.getElementById("total-expenses");
   expensesText.innerText = expenses;
@@ -18,17 +18,27 @@ function expensesFunction() {
   return totalExpenses;
 }
 
-// calculating income and expenses
-document.getElementById("calc-btn").addEventListener("click", function () {
-  expensesFunction();
-  // income
+// updating balance
+function updatingBalance() {
+  // income input
   const incomeInput = document.getElementById("income-input");
   const income = parseFloat(incomeInput.value);
-
-  // updating balance
+  //   balance amount
   const balance = income - expensesFunction();
   const balanceText = document.getElementById("balance");
   balanceText.innerText = balance;
+
+  const balanceAmount = parseFloat(balanceText.innerText);
+  return balanceAmount;
+}
+
+// calculating income and expenses
+document.getElementById("calc-btn").addEventListener("click", function () {
+  // total expense
+  expensesFunction();
+
+  // updating balance
+  updatingBalance();
 });
 
 // amount save listener
@@ -47,10 +57,7 @@ document.getElementById("save-btn").addEventListener("click", function () {
   const saving = parseInt(savingText.innerText);
 
   // remaining-balance
-  const balance = document.getElementById("balance");
-  const balanceAmount = parseFloat(balance.innerText);
-
-  const remainingAmount = balanceAmount - saving;
+  const remainingAmount = updatingBalance() - saving;
 
   const remaining = document.getElementById("remaining-balance");
   remaining.innerText = remainingAmount;
