@@ -15,7 +15,25 @@ function expensesFunction() {
   expensesText.innerText = expenses;
   const totalExpenses = parseFloat(expensesText.innerText);
 
-  return totalExpenses;
+  if (foodInput.value < 0) {
+    document.getElementById("food-alert").innerText =
+      "Please Use a positive amount of food Expense";
+    document.getElementById("food-alert").style.color = "tomato";
+  } else if (rentInput.value < 0) {
+    document.getElementById("rent-alert").innerText =
+      "Please Use a positive amount of rent Expense";
+    document.getElementById("rent-alert").style.color = "tomato";
+  } else if (clothInput.value < 0) {
+    document.getElementById("cloth-alert").innerText =
+      "Please Use a positive amount of clothes Expense";
+    document.getElementById("cloth-alert").style.color = "tomato";
+  } else {
+    document.getElementById("food-alert").innerText = "";
+    document.getElementById("rent-alert").innerText = "";
+    document.getElementById("cloth-alert").innerText = "";
+
+    return totalExpenses;
+  }
 }
 
 // updating balance
@@ -23,7 +41,7 @@ function updatingBalance() {
   // income input
   const incomeInput = document.getElementById("income-input");
   const income = parseFloat(incomeInput.value);
-  //   balance amount
+  // balance amount
   const balance = income - expensesFunction();
   const balanceText = document.getElementById("balance");
   balanceText.innerText = balance;
@@ -32,16 +50,14 @@ function updatingBalance() {
   return balanceAmount;
 }
 
-// calculating income and expenses
+// calculate income and expenses event
 document.getElementById("calc-btn").addEventListener("click", function () {
-  // total expense
-  expensesFunction();
+  expensesFunction(); // total expenses
 
-  // updating balance
-  updatingBalance();
+  updatingBalance(); // updating balance
 });
 
-// amount save listener
+// saving amount event
 document.getElementById("save-btn").addEventListener("click", function () {
   // income
   const incomeInput = document.getElementById("income-input");
