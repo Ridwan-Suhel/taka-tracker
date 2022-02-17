@@ -11,6 +11,12 @@
 #nothingShow {
   display: none;
 }
+#save-amount,
+#remaining-balance,
+#total-expenses,
+#balance {
+  color: #494949f8;
+}
 @media (max-width: 370px) {
   .tracker-wrapper {
     margin-top: 30px;
